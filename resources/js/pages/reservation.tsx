@@ -67,7 +67,7 @@ export default function Reservation({ items, isAuthed }: { items: Item[]; isAuth
                             <label style={label}>Mode</label>
                             <select name="mode" value={data.mode} onChange={(e) => setData('mode', e.target.value)} style={field}>
                                 <option>Retrait à la ferme</option>
-                                <option>Livraison (Deux-Sèvres)</option>
+                                <option>Livraison (Abidjan)</option>
                                 <option>Livraison réfrigérée (national)</option>
                             </select>
                             <label style={label}>Note pour l'éleveur</label>

@@ -70,7 +70,7 @@ function NotificationsCard() {
 function LoyaltyCard({ loyalty }: { loyalty: Loyalty }) {
     return (
         <div style={{ background: 'linear-gradient(150deg,#b8862b,#8a6417)', color: '#fff', borderRadius: 16, padding: 24 }}>
-            <div style={{ fontSize: 11, letterSpacing: '.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,.75)' }}>Fidélité Kanga</div>
+            <div style={{ fontSize: 11, letterSpacing: '.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,.75)' }}>Fidélité Kanga Holdings</div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, margin: '10px 0 4px' }}>
                 <span style={{ fontFamily: serif, fontSize: 46, lineHeight: 1 }}>{loyalty.points}</span>
                 <span style={{ fontSize: 15, opacity: 0.85 }}>point{loyalty.points > 1 ? 's' : ''}</span>

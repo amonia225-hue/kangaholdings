@@ -101,7 +101,7 @@ return url === '/compte' || url === '/login' || url === '/register';
             <div style={{ background: KH.greenDeep, color: '#d9d0bd', fontSize: 12, letterSpacing: '.14em', textTransform: 'uppercase' }}>
                 <div style={{ maxWidth: maxW, margin: '0 auto', padding: '9px 28px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16 }}>
                     <span>Élevage fermier · Plein air · Réservé aux professionnels de bouche</span>
-                    <span style={{ opacity: 0.7 }} className="kh-hide-sm">Retrait ferme &amp; livraison — Deux-Sèvres</span>
+                    <span style={{ opacity: 0.7 }} className="kh-hide-sm">Retrait ferme &amp; livraison — Abidjan</span>
                 </div>
             </div>
 
@@ -125,11 +125,6 @@ return url === '/compte' || url === '/login' || url === '/register';
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                        {auth.user?.is_admin && (
-                            <Link href="/admin" style={{ ...navBtn(url.startsWith('/admin')), border: '1px solid rgba(34,39,31,.18)' }} className="kh-hide-sm">
-                                Admin
-                            </Link>
-                        )}
                         <Link href="/reservation" style={{ position: 'relative', background: 'none', border: '1px solid rgba(34,39,31,.22)', color: KH.ink, padding: '9px 14px', borderRadius: 999, fontSize: 13, letterSpacing: '.04em', display: 'flex', alignItems: 'center', gap: 8 }}>
                             Réservation
                             {cartCount > 0 && (
@@ -177,11 +172,6 @@ return url === '/compte' || url === '/login' || url === '/register';
                                 </Link>
                             );
                         })}
-                        {auth.user?.is_admin && (
-                            <Link href="/admin" onClick={() => setMenuOpen(false)} style={{ padding: '13px 14px', borderRadius: 10, fontSize: 16, color: url.startsWith('/admin') ? KH.ink : 'rgba(34,39,31,.72)', fontWeight: url.startsWith('/admin') ? 600 : 400 }}>
-                                Administration
-                            </Link>
-                        )}
                         <Link href={auth.user ? '/compte' : '/login'} onClick={() => setMenuOpen(false)} style={{ marginTop: 6, padding: '13px 14px', borderRadius: 999, fontSize: 15, textAlign: 'center', background: KH.green, color: KH.cream }}>
                             {auth.user ? 'Mon espace' : 'Se connecter'}
                         </Link>
@@ -221,7 +211,9 @@ return url === '/compte' || url === '/login' || url === '/register';
                     </FootCol>
                     <FootCol title="Contact">
                         <div style={{ fontSize: 14, lineHeight: 1.9 }}>
-                            Les Grands Champs<br />79000 · Deux-Sèvres<br />05 49 00 00 00<br />bonjour@kanga.fr
+                            Cocody-Angré Star 7<br />7b Rue L117 · Abidjan<br />
+                            <a href="tel:+2250707481128" style={{ color: 'inherit', textDecoration: 'none' }}>07 07 48 11 28</a><br />
+                            <a href="mailto:infos@kangaholdings.com" style={{ color: 'inherit', textDecoration: 'none' }}>infos@kangaholdings.com</a>
                         </div>
                     </FootCol>
                 </div>

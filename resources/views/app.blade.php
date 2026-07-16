@@ -9,6 +9,7 @@
             html { background-color: #f4efe4; }
         </style>
 
+        <link rel="icon" href="/favicon.ico" sizes="any">
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
         <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
         <link rel="apple-touch-icon" href="/icons/icon-192.png">
@@ -19,7 +20,7 @@
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="apple-mobile-web-app-title" content="Kanga">
+        <meta name="apple-mobile-web-app-title" content="Kanga Holdings">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +29,7 @@
         @viteReactRefresh
         @vite(['resources/css/app.css', 'resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
         <x-inertia::head>
-            <title>{{ config('app.name', 'Laravel') }}</title>
+            <title>{{ config('app.name', 'Kanga Holdings') }}</title>
         </x-inertia::head>
     </head>
     <body class="font-sans antialiased">

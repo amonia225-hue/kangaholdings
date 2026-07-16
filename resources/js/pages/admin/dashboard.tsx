@@ -1,4 +1,4 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, router } from '@inertiajs/react';
 import AdminShell, { STATUS_STYLE } from '@/kanga/AdminShell';
 import { formatF, KH } from '@/kanga/theme';
 
@@ -52,8 +52,15 @@ function RevenueChart({ data }: { data: Month[] }) {
     );
 }
 
-export default function AdminDashboard({ kpis, monthly, topProducts, recent }: { kpis: Kpis; monthly: Month[]; topProducts: Top[]; recent: Recent[] }) {
+export default function AdminDashboard({ kpis, monthly, topProducts, recent, maintenance }: { kpis: Kpis; monthly: Month[]; topProducts: Top[]; recent: Recent[]; maintenance: boolean }) {
     const card = { background: '#fff', border: '1px solid rgba(34,39,31,.1)', borderRadius: 16, padding: 24 } as const;
+
+    const toggleMaintenance = () => {
+        const msg = maintenance
+            ? 'Réactiver le site pour tous les visiteurs ?'
+            : 'Mettre le site en maintenance ? Les visiteurs verront une page « bientôt de retour » ; vous, admin, gardez l’accès complet.';
+        if (confirm(msg)) router.post('/admin/maintenance', {}, { preserveScroll: true });
+    };
 
     const kpiCards = [
         { label: 'CA total (devis confirmés)', value: formatF(kpis.ca_total), big: true, accent: KH.green },
@@ -73,12 +80,29 @@ export default function AdminDashboard({ kpis, monthly, topProducts, recent }: {
         <AdminShell title="Tableau de bord">
             <Head title="Admin · Tableau de bord — Kanga Holdings" />
 
+            {/* maintenance banner */}
+            {maintenance && (
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 12, background: '#7a1f1f', color: '#fff', borderRadius: 14, padding: '14px 20px', marginBottom: 18 }}>
+                    <div style={{ fontSize: 14 }}>
+                        <strong>Site en maintenance.</strong> Les visiteurs voient la page « bientôt de retour ». Vous seul gardez l’accès.
+                    </div>
+                    <button onClick={toggleMaintenance} style={{ flex: 'none', background: '#fff', color: '#7a1f1f', border: 'none', padding: '9px 18px', borderRadius: 999, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
+                        Réactiver le site
+                    </button>
+                </div>
+            )}
+
             {/* quick actions */}
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 22 }}>
                 <Link href="/admin/produits" style={{ background: KH.gold, color: '#fff', padding: '11px 20px', borderRadius: 999, fontSize: 14 }}>+ Publier un produit</Link>
                 <Link href="/admin/reservations" data={{ statut: 'en_cours' }} style={{ background: KH.green, color: KH.cream, padding: '11px 20px', borderRadius: 999, fontSize: 14 }}>Commandes en cours</Link>
                 <Link href="/admin/clients" style={{ background: '#fff', color: KH.ink, border: '1px solid rgba(34,39,31,.18)', padding: '11px 20px', borderRadius: 999, fontSize: 14 }}>Liste des clients</Link>
                 <Link href="/admin/categories" style={{ background: '#fff', color: KH.ink, border: '1px solid rgba(34,39,31,.18)', padding: '11px 20px', borderRadius: 999, fontSize: 14 }}>Catégories</Link>
+                {!maintenance && (
+                    <button onClick={toggleMaintenance} style={{ marginLeft: 'auto', background: '#fff', color: '#7a1f1f', border: '1px solid rgba(122,31,31,.35)', padding: '11px 20px', borderRadius: 999, fontSize: 14, cursor: 'pointer' }}>
+                        Mettre en maintenance
+                    </button>
+                )}
             </div>
 
             {/* KPI row */}

@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ClientController as AdminClientController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\MaintenanceController as AdminMaintenanceController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\ReservationController as AdminReservationController;
 use App\Http\Controllers\CartController;
@@ -41,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
 // Admin
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', AdminDashboardController::class)->name('dashboard');
+    Route::post('/maintenance', [AdminMaintenanceController::class, 'toggle'])->name('maintenance.toggle');
     Route::get('/reservations', [AdminReservationController::class, 'index'])->name('reservations');
     Route::get('/reservations/{reservation}', [AdminReservationController::class, 'show'])->name('reservations.show');
     Route::post('/reservations/{reservation}/devis', [AdminReservationController::class, 'quote'])->name('reservations.quote');

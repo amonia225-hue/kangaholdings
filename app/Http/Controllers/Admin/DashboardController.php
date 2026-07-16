@@ -7,6 +7,7 @@ use App\Models\LoyaltyTransaction;
 use App\Models\Product;
 use App\Models\Reservation;
 use App\Models\ReservationItem;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -75,6 +76,7 @@ class DashboardController extends Controller
             'monthly' => $months,
             'topProducts' => $topProducts,
             'recent' => $recent,
+            'maintenance' => Setting::bool('maintenance'),
         ]);
     }
 }
