@@ -1,0 +1,1 @@
+var e={cream:`#f4efe4`,cream2:`#eae1cf`,sand:`#dfd6c2`,field:`#faf7f0`,ink:`#22271f`,green:`#333f2c`,greenDeep:`#1f2a1b`,gold:`#b8862b`,goldDark:`#8a6417`,goldLight:`#e0b24e`,goldBtn:`#c2922b`,paper:`#f7f2e6`},t=`'DM Serif Display', Georgia, serif`,n=1220;function r(e){let t=Number(e??0);return Math.round(t).toLocaleString(`fr-FR`)+` F`}export{t as i,r as n,n as r,e as t};

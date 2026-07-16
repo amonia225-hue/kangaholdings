@@ -1,0 +1,238 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.87 0 0);
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.87 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.145 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.145 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.985 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.396 0.141 25.723);
+    --destructive-foreground: oklch(0.637 0.237 25.331);
+    --border: oklch(0.269 0 0);
+    --input: oklch(0.269 0 0);
+    --ring: oklch(0.439 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.985 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(0.269 0 0);
+    --sidebar-ring: oklch(0.439 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* ============================================================
+   KANGA HOLDINGS — thème fermier (crème / vert / or-miel)
+   ============================================================ */
+:root {
+  --kh-cream: #f4efe4;
+  --kh-cream2: #eae1cf;
+  --kh-sand: #dfd6c2;
+  --kh-field: #faf7f0;
+  --kh-ink: #22271f;
+  --kh-green: #333f2c;
+  --kh-green-deep: #1f2a1b;
+  --kh-gold: #b8862b;
+  --kh-gold-light: #e0b24e;
+  --kh-gold-btn: #c2922b;
+}
+
+body {
+  background: var(--kh-cream);
+  color: var(--kh-ink);
+  font-family: 'Mulish', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.kh-serif { font-family: 'DM Serif Display', Georgia, serif; }
+
+.kh ::selection { background: var(--kh-green); color: var(--kh-cream); }
+
+@keyframes khfade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.kh-fade { animation: khfade .4s ease; }
+
+/* subtle lift on interactive cards / buttons */
+.kh-lift { transition: transform .18s ease, box-shadow .18s ease; }
+.kh-lift:hover { transform: translateY(-3px); }
+
+.kh-cat:hover .kh-cat-img { transform: scale(1.05); }
+.kh-cat-img { transition: transform .5s ease; }
+
+/* placeholder image slot */
+.kh-slot {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(120% 120% at 30% 20%, rgba(184,134,43,.12), transparent 60%),
+    linear-gradient(135deg, #e7ddca 0%, #dfd6c2 55%, #d3c8b0 100%);
+  color: rgba(34,39,31,.42);
+  font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  text-align: center; padding: 12px;
+}
+
+/* Kanga responsive helpers */
+@media (max-width: 860px) {
+  .kh-hide-md { display: none !important; }
+  .kh-foot-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+  .kh-hero-grid { grid-template-columns: 1fr !important; }
+  .kh-hero-collage { display: none !important; }
+  .kh-story-grid { grid-template-columns: 1fr !important; }
+  .kh-cats-grid { grid-template-columns: 1fr 1fr !important; grid-auto-rows: 180px !important; }
+  .kh-cats-grid > .kh-cat-big { grid-row: auto !important; }
+  .kh-products-grid { grid-template-columns: 1fr 1fr !important; }
+  .kh-reserve-grid { grid-template-columns: 1fr !important; }
+  .kh-auth-grid { grid-template-columns: 1fr !important; }
+  .kh-account-grid { grid-template-columns: 1fr !important; }
+  .kh-trust-grid { grid-template-columns: 1fr 1fr !important; row-gap: 20px !important; }
+  .kh-signup-grid { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 560px) {
+  .kh-hide-sm { display: none !important; }
+  .kh-products-grid { grid-template-columns: 1fr !important; }
+  .kh-cats-grid { grid-template-columns: 1fr !important; }
+  .kh-foot-grid { grid-template-columns: 1fr !important; }
+  .kh-h1 { font-size: 40px !important; }
+}
+
+/* Admin vertical sidebar → horizontal scroll on small screens */
+@media (max-width: 860px) {
+  .kh-admin-grid { grid-template-columns: 1fr !important; gap: 18px !important; }
+  .kh-admin-side { position: static !important; }
+  .kh-admin-side > div { padding: 10px !important; }
+  .kh-admin-side nav { flex-direction: row !important; overflow-x: auto; gap: 6px !important; }
+  .kh-admin-side nav a { white-space: nowrap; border-left: none !important; }
+  .kh-admin-side > div > div:first-child { display: none; }
+}
+
+/* Mobile burger menu */
+.kh-burger { display: none; }
+@media (max-width: 860px) {
+  .kh-burger { display: inline-flex !important; }
+}
+@media (min-width: 861px) {
+  .kh-mobile-menu { display: none !important; }
+}
