@@ -12,9 +12,9 @@ export default function Reservation({ items, isAuthed }: { items: Item[]; isAuth
         note: '',
     });
 
-    const inc = (id: number) => router.patch(`/panier/${id}`, { delta: 1 }, { preserveScroll: true });
-    const dec = (id: number) => router.patch(`/panier/${id}`, { delta: -1 }, { preserveScroll: true });
-    const remove = (id: number) => router.delete(`/panier/${id}`, { preserveScroll: true });
+    const inc = (id: number) => router.post(`/panier/${id}/change`, { delta: 1 }, { preserveScroll: true });
+    const dec = (id: number) => router.post(`/panier/${id}/change`, { delta: -1 }, { preserveScroll: true });
+    const remove = (id: number) => router.post(`/panier/${id}/remove`, {}, { preserveScroll: true });
 
     const submit = (e: React.FormEvent) => {
         e.preventDefault();

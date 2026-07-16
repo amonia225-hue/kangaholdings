@@ -291,7 +291,7 @@
     "isEntry": true
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-D_4wM1MK.js",
+    "file": "assets/app-C25lkRZB.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
@@ -337,7 +337,7 @@
     ]
   },
   "resources/js/pages/admin/categories.tsx": {
-    "file": "assets/categories-Dg9z2R5K.js",
+    "file": "assets/categories-BVWi_7Po.js",
     "name": "categories",
     "src": "resources/js/pages/admin/categories.tsx",
     "isDynamicEntry": true,
@@ -371,7 +371,7 @@
     ]
   },
   "resources/js/pages/admin/produits.tsx": {
-    "file": "assets/produits-COov8nLj.js",
+    "file": "assets/produits-CqDT6lv6.js",
     "name": "produits",
     "src": "resources/js/pages/admin/produits.tsx",
     "isDynamicEntry": true,
@@ -553,7 +553,7 @@
     ]
   },
   "resources/js/pages/reservation.tsx": {
-    "file": "assets/reservation-4con3S5a.js",
+    "file": "assets/reservation-BmjKNmQd.js",
     "name": "reservation",
     "src": "resources/js/pages/reservation.tsx",
     "isDynamicEntry": true,

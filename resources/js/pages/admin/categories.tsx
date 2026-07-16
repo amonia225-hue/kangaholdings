@@ -36,7 +36,7 @@ export default function AdminCategories({ categories }: { categories: Category[]
     const remove = (c: Category) => {
         if (c.products_count > 0) return;
         if (confirm(`Supprimer la catégorie « ${c.label} » ?`)) {
-            router.delete(`/admin/categories/${c.id}`, { preserveScroll: true });
+            router.post(`/admin/categories/${c.id}/delete`, {}, { preserveScroll: true });
         }
     };
 

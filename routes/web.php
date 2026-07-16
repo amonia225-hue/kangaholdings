@@ -17,9 +17,10 @@ Route::get('/', HomeController::class)->name('home');
 Route::get('/produits', [ProductController::class, 'index'])->name('produits');
 
 // Cart (session-based, works for guests)
+// POST-only on purpose: LiteSpeed/LWS blocks PUT/PATCH/DELETE (cf. Veriace).
 Route::post('/panier/{product}', [CartController::class, 'add'])->name('cart.add');
-Route::patch('/panier/{product}', [CartController::class, 'change'])->name('cart.change');
-Route::delete('/panier/{product}', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/panier/{product}/change', [CartController::class, 'change'])->name('cart.change');
+Route::post('/panier/{product}/remove', [CartController::class, 'remove'])->name('cart.remove');
 
 // Reservation
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
@@ -48,12 +49,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::post('/produits', [AdminProductController::class, 'store'])->name('produits.store');
     Route::post('/produits/{product}', [AdminProductController::class, 'update'])->name('produits.update');
     Route::post('/produits/{product}/toggle', [AdminProductController::class, 'toggle'])->name('produits.toggle');
-    Route::delete('/produits/{product}', [AdminProductController::class, 'destroy'])->name('produits.destroy');
+    Route::post('/produits/{product}/delete', [AdminProductController::class, 'destroy'])->name('produits.destroy');
     Route::get('/clients', [AdminClientController::class, 'index'])->name('clients');
     Route::get('/categories', [AdminCategoryController::class, 'index'])->name('categories');
     Route::post('/categories', [AdminCategoryController::class, 'store'])->name('categories.store');
     Route::post('/categories/{category}', [AdminCategoryController::class, 'update'])->name('categories.update');
-    Route::delete('/categories/{category}', [AdminCategoryController::class, 'destroy'])->name('categories.destroy');
+    Route::post('/categories/{category}/delete', [AdminCategoryController::class, 'destroy'])->name('categories.destroy');
 });
 
 require __DIR__.'/settings.php';

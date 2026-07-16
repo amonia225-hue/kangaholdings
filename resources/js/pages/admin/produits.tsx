@@ -79,7 +79,7 @@ export default function AdminProduits({ products, categories }: { products: Prod
     const [creating, setCreating] = useState(false);
     const toggle = (id: number) => router.post(`/admin/produits/${id}/toggle`, {}, { preserveScroll: true });
     const remove = (p: Product) => {
-        if (confirm(`Supprimer « ${p.name} » ?`)) router.delete(`/admin/produits/${p.id}`, { preserveScroll: true });
+        if (confirm(`Supprimer « ${p.name} » ?`)) router.post(`/admin/produits/${p.id}/delete`, {}, { preserveScroll: true });
     };
 
     return (
