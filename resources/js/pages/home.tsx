@@ -8,11 +8,10 @@ type Category = { slug: string; label: string; note: string | null; image: strin
 const HERO_STATS = [
     { k: '100%', v: 'Plein air' },
     { k: '24h', v: 'Devis confirmé' },
-    { k: '1998', v: 'Depuis' },
+    { k: '0', v: 'Croissance forcée' },
 ];
 
 const TRUST = [
-    { k: '1998', v: 'Année de fondation' },
     { k: '100%', v: 'Plein air' },
     { k: '24h', v: 'Devis confirmé' },
     { k: '0', v: 'Croissance forcée' },
@@ -49,7 +48,7 @@ export default function Home({ categories }: { categories: Category[] }) {
                     <div style={{ position: 'relative', maxWidth: maxW, margin: '0 auto', padding: '96px 28px 108px' }}>
                         <div style={{ maxWidth: 660 }}>
                             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, background: 'rgba(255,255,255,.07)', border: '1px solid rgba(200,153,46,.45)', padding: '5px 6px 5px 15px', borderRadius: 999, marginBottom: 26 }}>
-                                <span style={{ fontSize: 11, letterSpacing: '.22em', textTransform: 'uppercase', color: '#e8cf95' }}>Maison fermière · depuis 1998</span>
+                                <span style={{ fontSize: 11, letterSpacing: '.22em', textTransform: 'uppercase', color: '#e8cf95' }}>Maison fermière · Plein air</span>
                                 <span style={{ width: 30, height: 30, borderRadius: '50%', overflow: 'hidden', background: '#fff', flex: 'none', display: 'inline-block' }}>
                                     <img src="/img/kanga-logo.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.04)' }} />
                                 </span>

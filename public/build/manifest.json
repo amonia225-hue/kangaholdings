@@ -291,7 +291,7 @@
     "isEntry": true
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-DdWGe9B7.js",
+    "file": "assets/app-BJ4ecgpy.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
@@ -529,7 +529,7 @@
     ]
   },
   "resources/js/pages/home.tsx": {
-    "file": "assets/home-CWTusj3u.js",
+    "file": "assets/home-DRX39uGx.js",
     "name": "home",
     "src": "resources/js/pages/home.tsx",
     "isDynamicEntry": true,
